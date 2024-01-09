@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vercel like header example</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <header class="menu__wrapper">
+        <div class="menu__bar">
+            <a href="#" title="Home" aria-label="home" class="logo"><!-- vercel logo --></a>
+            <nav>
+                <ul class="navigation hide">
+                    <li>
+                        <button>
+                            {{ user.first_name }}
+                        </button>
+                        <div class="dropdown__wrapper">
+                            <div class="dropdown">
+                                <ul class="list-items-with-description">
+                                    <li>
+                                        <div class="item-title">
+                                            <h3>Your Email</h3>
+                                            <p>{{ user.email }}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="action-buttons hide">
+            <a class="whatsapp-share-button" href="https://web.whatsapp.com://send?text=This is whatsapp sharing example using button" target="_blank" title="whats App" class="secondary">
+                Whats App
+            </a>
+            <a href="/logout" title="Log out" class="primary">
+                Log out
+            </a>
+        </div>
+        <button aria-label="Open menu" class="burger-menu" type="button">
+        </button>
+    </header>
+    {% block title %}
+
+    {% endblock %}
+</body>
+
+</html>
